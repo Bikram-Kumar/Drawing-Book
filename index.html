@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drawing Book</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+
+  <!-- We start everything hidden, and then display when the JSUI module stylesheets get loaded to prevent delay in positioning. -->
+  <div id="main-container-div" style="display:none">
+ 
+  <div id="toolBar" class="position-top-center">
+    <input type="color" id="colorPicker" value="#ffffff" />
+    <input name="brushSize" type="range" id="brushSize" value="5" min="1" max="500" step="1" />
+    <label for="brushSize"></label>
+  </div>
+  
+  <div id="canvasArea" class="position-fixed position-center">
+    <canvas id="cnvs" width="280px" height="400px">
+      Canvas not supported!
+    </canvas>
+  </div>
+  <a download="cnvs.png" onclick="downloadCanvas()">Click to Download</a>
+
+  </div>
+  <form class="hidden">
+    <input type="color" value="" />
+    <input type="button" placeholder="hi" value="" />
+    <input type="date" value="" />
+  </form>
+  <script type="module" src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
