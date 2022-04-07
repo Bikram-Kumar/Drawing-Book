@@ -1,0 +1,47 @@
+/******************************************************************************************
+  ★ This stylesheet defines snippet styles for different classes.
+  ★ You just need to add required class name to the target element to apply those styles. 
+  ★ Either define class name inside html tag 
+    or add class name with javascript using element.classList.add(class-name);
+******************************************************************************************/
+
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
+.position-fixed {
+  position: fixed;
+}
+.position-top, .position-top-left, .position-top-center, .position-top-right {
+  top: 0px;
+}
+.position-bottom, .position-bottom-left, .position-bottom-center, .position-bottom-right {
+  bottom: 0px;
+}
+.position-left, .position-top-left, .position-center-left, .position-bottom-left {
+  left: 0px;
+}
+.position-right, .position-top-right, .position-center-right, .position-bottom-right {
+  right: 0px;
+}
+.position-centerX, .position-top-center, .position-bottom-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.position-centerY, .position-center-left, .position-center-right {
+  top: 50%;
+  transform: translateY(-50%);
+}
+/*********************************************************************************************************************************************************
+Note:-
+       ★ .position-center won't work as the combination of .position-centerX and .position-centerY.   
+       ★ This is because the transform property of the later one will overwrite the previous and it will not get translated in both x and y directions.
+       ★ So we need to define .position-center properties separately.
+*********************************************************************************************************************************************************/
+.position-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
