@@ -1,3 +1,6 @@
 [submodule "JSUI"]
 	path = lib/JSUI
 	url = git@github.com:Bikram-Kumar/JSUI.git
+[submodule "lib/JSUI"]
+	path = lib/JSUI
+	url = git@github.com:Bikram-Kumar/JSUI.git
