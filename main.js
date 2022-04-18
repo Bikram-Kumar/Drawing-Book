@@ -1,11 +1,11 @@
-import {ElementHandler, UI_StylesManager, EventHandler} from "./lib/JSUI/index.js";
+import {GUIHandler, UI_StylesManager, EventHandler} from "./lib/JSUI/index.js";
 
 UI_StylesManager.injectAllStyles();
 
-var bodyElementHandler = new ElementHandler();
+var bodyElementHandler = new GUIHandler();
 var toolBarEventHandler = new EventHandler(document.querySelector('#toolBar'));
 
-toolBarEventHandler.onLeftSwipe = function() {
+toolBarEventHandler.onRightSwipe = function() {
   alert(8);
 };
 var cnvs = document.getElementById('cnvs');
@@ -22,9 +22,12 @@ var pointerCoords = {
   previous1: {x:0,y:0},
   current: {x:0,y:0}
 };
+  
 window.onload = function() {
   
+  
   window.document.querySelector('#main-container-div').style.display = "block";
+  
   /*setTimeout(function() {
     bodyElementHandler.alert("Sorry, some files could not be loaded. Please press OK to Try Again and load the required contents.", () => {
       bodyElementHandler.showLoadingBufferPopUp("#ff0000");
@@ -59,9 +62,20 @@ window.onload = function() {
   cnvs.addEventListener('pointerup', handlePointerUp);
   colorPicker.addEventListener('input', setColor);
   brushSize.addEventListener('input', setBrushSize);
+  
 };
 
 function drawPixel(x, y) {
+  window.fetch("./resources/forms/sample.html").then(response => {
+      response.text().then(form => {
+          bodyElementHandler.formInput(form, () => {
+              alert();
+          });
+      }).catch(err => {
+          console.log(err);
+      });
+  }).catch(err =>{console.log(err);});
+  
   ctx.beginPath();
   ctx.arc(x, y, brushSize.value/2, 0, 6.28, false);
   ctx.fill();
